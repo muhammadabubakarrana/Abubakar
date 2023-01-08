@@ -2,7 +2,6 @@ import React from "react";
 import { StyleSheet, TextInput } from "react-native";
 
 
-
 export const Input = ({ placeholder,keyboarType, style, ...restProps }) => {
     return (
     <TextInput
