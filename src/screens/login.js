@@ -1,6 +1,6 @@
 import React from "react";
 import { StyleSheet, SafeAreaView, Image, View } from "react-native";
-import { images } from "../config";
+import { baseStyle, images, theme, } from "../config";
 import { Checkbox, Button, Heading, Paragraph, Input } from "../components";
 
 
@@ -8,7 +8,7 @@ const Login = () => {
   return (
     <SafeAreaView style={styles.container}>
       <Image source={images.logo} resizeMode="contain" style={styles.logo} />
-      <Image source={images.bubbles} resizeMode="contain" style={styles.logo} />
+      <Image source={images.bubbles} resizeMode="contain" />
       <View style={styles.card}>
         <Heading center>Login To Your Account.</Heading>
         <Paragraph center style={styles.paragraph}>Please Enter your login details</Paragraph>
@@ -34,35 +34,36 @@ const styles = StyleSheet.create({
     backgroundColor: '#0AC2CC',
     alignItems: 'center',
   },
-  logo: { marginTop: 48 },
+  logo: { marginVertical:baseStyle.marginVertical(10) },
   paragraph: {
-    marginTop: 5,
-    marginBottom: 40,
+    marginTop:baseStyle.marginTop(5),
+    marginBottom:baseStyle.marginBottom (15),
   },
   card: {
-    backgroundColor: 'white',
-    borderTopLeftRadius: 32,
-    borderTopRightRadius: 32,
+    backgroundColor: theme.colors.white,
+    borderTopLeftRadius:baseStyle.borderTopLeftRadius(32),
+    borderTopRightRadius:baseStyle.borderTopRightRadius(32),
     position: 'absolute',
     //   paddingHorizontal: 30,
     //  paddingTop: 30,
     //   paddingBottom: 60, 
-    padding: 30,
+    paddingVertical:baseStyle.paddingVertical(30),
+    paddingHorizontal:baseStyle.paddingHorizontal(30),
     width: '100%',
     bottom: 0,
   },
 
-  input: { marginBottom: 20 },
+  input: { marginBottom:baseStyle.marginBottom(20) },
 
   forgetContainer: {
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginBottom: 40,
+    marginBottom:baseStyle.marginBottom(20),
   },
 
   line: {
-    marginVertical: 40,
+    marginVertical:baseStyle.marginVertical(20),
     borderBottomColor: 'black',
     width: '70%',
     alignSelf: 'center',
@@ -73,7 +74,7 @@ const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'row',
   },
-  btn: { marginTop: 10 },
+  btn: { marginTop:baseStyle.marginTop(10) },
 });
 
 export default Login;

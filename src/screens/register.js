@@ -1,6 +1,6 @@
 import React from "react";
 import { SafeAreaView, View, Image, StyleSheet, Platform, StatusBar } from "react-native";
-import { images, theme } from "../config";
+import { images, theme, baseStyle } from "../config";
 import { Button, Checkbox, Heading, Input, Paragraph } from "../components";
 
 
@@ -41,39 +41,42 @@ const styles = StyleSheet.create({
         paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
     },
     logo: {
-        width: 85,
-        height: 85,
-        marginVertical: 40,
+        width:baseStyle.width (80),
+        height:baseStyle.hight(85),
+        marginVertical:baseStyle.marginVertical (10),
     },
     card: {
         backgroundColor: theme.colors.white,
         width: "100%",
         position: 'absolute',
         bottom: 0,
-        borderTopRightRadius: 32,
-        borderTopLeftRadius: 32,
-        padding: 30,
+        borderTopRightRadius:baseStyle.borderTopRightRadius(32),
+        borderTopLeftRadius:baseStyle.borderTopLeftRadius(32),
+        paddingVertical:baseStyle.paddingVertical(10),
+        paddingHorizontal: baseStyle.paddingHorizontal(30),
+        //padding: 30,
+
 
     },
     splitInputs: {
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-        marginBottom: 20,
+        marginBottom:baseStyle.marginBottom (10),
     },
     para: {
-        marginTop: 5,
-        marginBottom: 20,
+        marginTop:baseStyle.marginTop(5),
+        marginBottom:baseStyle.marginBottom(10),
     },
     input: {
-        marginBottom: 20
+        marginBottom:baseStyle.marginBottom (10),
     },
-    checkbox:{marginBottom:40},
+    checkbox:{marginBottom:baseStyle.marginBottom (15),},
     btn:{
-        marginTop:10
+        marginTop:baseStyle.marginTop (10),
     },
     line: {
-        marginVertical: 40,
+        marginVertical:baseStyle.marginVertical (20),
         borderBottomColor: 'black',
         width: '70%',
         alignSelf: 'center',

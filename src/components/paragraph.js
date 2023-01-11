@@ -1,6 +1,6 @@
 import React from "react";
 import { StyleSheet, Text } from "react-native";
-import { theme } from "../config";
+import { theme,baseStyle } from "../config";
 
 export const Paragraph = ({ style, center, children, ...restprops }) => {
     return (
@@ -15,8 +15,8 @@ export const Paragraph = ({ style, center, children, ...restprops }) => {
 
 const styles = StyleSheet.create({
     paragraph: {
-        fontSize: 12,
-        lineHeight: 15,
+        fontSize:baseStyle.fontSize (12),
+        lineHeight:baseStyle.lineHight (15),
         color: theme.colors.black,
         fontFamily: theme.font.regular,
         opacity:0.6,    

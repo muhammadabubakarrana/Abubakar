@@ -1,5 +1,6 @@
 import React from "react";
 import { StyleSheet, TextInput } from "react-native";
+import { baseStyle, theme } from "../config"
 
 
 export const Input = ({ placeholder,keyboarType, style, ...restProps }) => {
@@ -15,9 +16,10 @@ export const Input = ({ placeholder,keyboarType, style, ...restProps }) => {
 
 const styles = StyleSheet.create({
     input: {
-        borderRadius:24,
-        borderWidth:1,
-        borderColor:'#00000080',
-        paddingVertical: 10, paddingHorizontal:20,
+        borderRadius:baseStyle.borderRadius (24),
+        borderWidth: baseStyle.borderWidth (1),
+        borderColor:theme.colors.grey,
+        paddingVertical: baseStyle.paddingVertical (10), 
+        paddingHorizontal: baseStyle.paddingHorizontal (20),
     }
 });

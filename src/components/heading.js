@@ -1,5 +1,6 @@
 import React from "react";
 import { StyleSheet, Text } from "react-native";
+import { baseStyle, theme } from "../config"
 
 export const Heading = ({ style, center, children, ...restprops }) => {
     return (<Text {...restprops}
@@ -13,10 +14,10 @@ export const Heading = ({ style, center, children, ...restprops }) => {
 
 const styles = StyleSheet.create({
     heading: {
-        fontSize: 24,
-        lineHeight: 29,
-        //fontWeight: '300',
-        color: '#000000'
+        fontSize:baseStyle.fontSize(24),
+        lineHeight:baseStyle.lineHight (29),
+        fontFamily: theme.font.regular,
+        color: theme.colors.black,
     },
 });
 

@@ -1,6 +1,6 @@
 import React from "react";
 import { TouchableOpacity, StyleSheet, Text } from "react-native";
-import { theme } from "../config";
+import { baseStyle, theme } from "../config";
 
 export const Button = ({ children, type, style, ...restProps }) => {
     return (
@@ -12,8 +12,8 @@ export const Button = ({ children, type, style, ...restProps }) => {
 
             <Text style={
                 type === 'outlined'
-                    ? { ...styles.text, ...styles.btnOutlined }
-                    : { ...styles.text, ...styles.btnFilled }
+                    ? { ...styles.text, ...styles.textOutlined }
+                    : { ...styles.text, ...styles.textFilled, }
             }>{children}</Text>
         </TouchableOpacity>
     );
@@ -23,9 +23,9 @@ export const Button = ({ children, type, style, ...restProps }) => {
 
 const styles = StyleSheet.create({
     btn: {
-        paddingVertical: 12,
+        paddingVertical: baseStyle.paddingVertical (12),
         // paddingHorizontal: 142,
-        borderRadius: 23,
+        borderRadius:baseStyle.borderRadius (23),
         shadowColor: theme.colors.silver,
         shadowOffset: {
             width: 0,
@@ -42,12 +42,12 @@ const styles = StyleSheet.create({
     btnOutlined: {
         backgroundColor: theme.colors.white,
         borderColor: theme.colors.blue,
-        borderWidth: 1,
+        borderWidth:baseStyle.borderWidth (1),
     },
     text: {
-        fontSize: 12,
+        fontSize:baseStyle.fontSize(12),
         fontFamily: theme.font.regular,
-        lineHeight: 18,
+        lineHeight: baseStyle.lineHight (18),
     },
     textOutlined: {
         color: theme.colors.blue,
